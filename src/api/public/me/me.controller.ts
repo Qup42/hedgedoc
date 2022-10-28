@@ -66,7 +66,7 @@ export class MeController {
     dto: HistoryEntryDto,
   })
   async getUserHistory(@RequestUser() user: User): Promise<HistoryEntryDto[]> {
-    const foundEntries = await this.historyService.getEntriesByUser(user);
+    const foundEntries = await this.historyService.getAllEntries();
     return await Promise.all(
       foundEntries.map((entry) => this.historyService.toHistoryEntryDto(entry)),
     );

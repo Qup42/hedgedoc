@@ -48,6 +48,17 @@ export class HistoryService {
 
   /**
    * @async
+   * Get all entries
+   * @return {HistoryEntry[]} an array of all history entries
+   */
+  async getAllEntries(): Promise<HistoryEntry[]> {
+    return await this.historyEntryRepository.find({
+      relations: ['note', 'note.aliases', 'user'],
+    });
+  }
+
+  /**
+   * @async
    * Get a history entry by the user and note
    * @param {Note} note - the note that the history entry belongs to
    * @param {User} user - the user that the history entry belongs to
