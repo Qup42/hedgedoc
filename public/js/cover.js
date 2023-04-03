@@ -40,8 +40,8 @@ const options = {
           <span class="id" style="display:none;"></span>
           <a href="#">
             <div class="item">
-              <div class="ui-history-pin fa fa-thumb-tack fa-fw"></div>
-              <div class="ui-history-close fa fa-close fa-fw" data-toggle="modal" data-target=".delete-history-modal"></div>
+              <!--<div class="ui-history-pin fa fa-thumb-tack fa-fw"></div>-->
+              <!--<div class="ui-history-close fa fa-close fa-fw" data-toggle="modal" data-target=".delete-history-modal"></div>-->
               <div class="content">
                 <h4 class="text"></h4>
                 <p>
@@ -200,10 +200,11 @@ historyList.on('updated', e => {
       }
     }
   }
-  $('.ui-history-close').off('click')
-  $('.ui-history-close').on('click', historyCloseClick)
-  $('.ui-history-pin').off('click')
-  $('.ui-history-pin').on('click', historyPinClick)
+  // Disable buttons as their functions are currently not implemented.
+  //$('.ui-history-close').off('click')
+  //$('.ui-history-close').on('click', historyCloseClick)
+  //$('.ui-history-pin').off('click')
+  //$('.ui-history-pin').on('click', historyPinClick)
 })
 
 function historyCloseClick (e) {
